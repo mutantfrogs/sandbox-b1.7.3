@@ -1,6 +1,6 @@
 package io.github.mutantfrogs.sandbox.block;
 
-import net.minecraft.block.Block;
+import io.github.mutantfrogs.sandbox.Sandbox;
 import net.minecraft.block.material.Material;
 import net.modificationstation.stationapi.api.template.block.TemplateBlock;
 import net.modificationstation.stationapi.api.util.Identifier;
@@ -13,6 +13,6 @@ public class CryingObsidianBlock extends TemplateBlock {
     }
 
     public int getDroppedItemId(int blockMeta, Random random) {
-        return Block.OBSIDIAN.id;
+        return Sandbox.cryingObsidianBlock.id;
     }
 }
