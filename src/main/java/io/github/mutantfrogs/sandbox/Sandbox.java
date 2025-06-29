@@ -1,6 +1,7 @@
 package io.github.mutantfrogs.sandbox;
 
 import io.github.mutantfrogs.sandbox.block.CryingObsidianBlock;
+import io.github.mutantfrogs.sandbox.item.ExampleItem;
 import io.github.mutantfrogs.sandbox.item.MusicDiscs;
 import net.mine_diver.unsafeevents.listener.EventListener;
 import net.minecraft.block.Block;
@@ -15,7 +16,7 @@ public class Sandbox {
     public static Namespace NAMESPACE;
 
      public static Block cryingObsidianBlock;
-     public static Item musicDiscWard;
+     public static Item exampleItem;
 
     @EventListener
     public void registerBlocks(BlockRegistryEvent event) {
@@ -24,6 +25,7 @@ public class Sandbox {
 
     @EventListener
     public void registerItems(ItemRegistryEvent event){
-        MusicDiscs.initDiscs(NAMESPACE); //custom method for keeping music disc configs together
+        exampleItem = new ExampleItem(NAMESPACE.id("example_item")).setTranslationKey(NAMESPACE, "example_item");
+        MusicDiscs.initDiscs(NAMESPACE); //disc initialization kept together in this function
     }
 }
